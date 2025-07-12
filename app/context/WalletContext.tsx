@@ -13,7 +13,6 @@ interface WalletContextType {
     setWallet: (wallet: WalletState) => void;
     updateWallet: (updates: Partial<WalletState>) => void;
     signOut: () => void;
-    getBalance: (address: string) => string;
     generateSeedPhrase: () => string;
     createWallet: (seedPhrase: string, password: string) => Promise<void>;
     importWallet: (seedPhrase: string, password: string) => void;
