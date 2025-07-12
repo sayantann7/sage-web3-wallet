@@ -30,10 +30,10 @@ export default function PasswordSetup() {
     setIsCreating(true);
     
     // Simulate wallet creation delay
-    setTimeout(() => {
-      createWallet(wallet.seedPhrase!, password);
-      setIsCreating(false);
-    }, 2000);
+    await createWallet(wallet.seedPhrase!, password);
+
+    console.log("wallet address created : ", wallet.address);
+    setIsCreating(false);
   };
 
   const passwordRequirements = [
