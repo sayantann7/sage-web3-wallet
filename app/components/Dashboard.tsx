@@ -77,8 +77,8 @@ export default function Dashboard() {
                     <div className="flex justify-between items-start mb-6">
                         <div>
                             <p className="text-blue-100 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>Total Balance</p>
-                            <h2 className="text-4xl font-bold" style={{ fontFamily: "'Nexa Heavy', system-ui, sans-serif" }}>{wallet.balance} ETH</h2>
-                            <p className="text-blue-200 mt-2" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>≈ $2,547.83 USD</p>
+                            <h2 className="text-4xl font-bold" style={{ fontFamily: "'Nexa Heavy', system-ui, sans-serif" }}>0.00000 SOL</h2>
+                            <p className="text-blue-200 mt-2" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>≈ $0.00 USD</p>
                         </div>
                         <div className="text-right">
                             <p className="text-blue-100 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>Your Address</p>
@@ -127,7 +127,7 @@ export default function Dashboard() {
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
                         <h3 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: "'Nexa Light', system-ui, sans-serif" }}>Recent Transactions</h3>
-                        <div className="space-y-3">
+                        {/* <div className="space-y-3">
                             <div className="flex justify-between items-center p-3 bg-gray-800 rounded-lg border border-gray-700">
                                 <div>
                                     <p className="font-medium text-white" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>Received</p>
@@ -149,12 +149,13 @@ export default function Dashboard() {
                                 </div>
                                 <span className="text-green-400 font-medium" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>+1.0 ETH</span>
                             </div>
-                        </div>
+                        </div> */}
+                        <h2 className='text-white/50'>No recent transactions</h2>
                     </div>
 
                     <div className="bg-gray-900 rounded-xl p-6 shadow-lg border border-gray-800">
                         <h3 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: "'Nexa Light', system-ui, sans-serif" }}>Portfolio</h3>
-                        <div className="space-y-4">
+                        {/* <div className="space-y-4">
                             <div className="flex justify-between items-center">
                                 <div className="flex items-center space-x-3">
                                     <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center border border-gray-600">
@@ -170,7 +171,8 @@ export default function Dashboard() {
                                     <p className="text-sm text-green-400" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>+5.2%</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+                        <h2 className='text-white/50'>Nothing present in portfolio</h2>
                     </div>
                 </div>
             </div>
@@ -180,7 +182,7 @@ export default function Dashboard() {
                 <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
                     <div className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-800">
                         <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: "'Nexa Heavy', system-ui, sans-serif" }}>Send Ethereum</h2>
+                            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: "'Nexa Heavy', system-ui, sans-serif" }}>Send Solana</h2>
                             <button
                                 onClick={() => setShowSendModal(false)}
                                 className="text-gray-400 hover:text-gray-300"
@@ -198,7 +200,7 @@ export default function Dashboard() {
                                     type="text"
                                     value={sendTo}
                                     onChange={(e) => setSendTo(e.target.value)}
-                                    placeholder="0x..."
+                                    placeholder="Dbx..."
                                     className="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                     style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
                                 />
@@ -206,7 +208,7 @@ export default function Dashboard() {
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2" style={{ fontFamily: "'Nexa Light', system-ui, sans-serif" }}>
-                                    Amount (ETH)
+                                    Amount (SOL)
                                 </label>
                                 <input
                                     type="number"
@@ -218,7 +220,7 @@ export default function Dashboard() {
                                     style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
                                 />
                                 <p className="text-sm text-gray-400 mt-1" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
-                                    Available: {wallet.balance} ETH
+                                    Available: 0.0000 ETH
                                 </p>
                             </div>
                         </div>
@@ -248,7 +250,7 @@ export default function Dashboard() {
                 <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
                     <div className="bg-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-800">
                         <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: "'Nexa Heavy', system-ui, sans-serif" }}>Receive Ethereum</h2>
+                            <h2 className="text-2xl font-bold text-white" style={{ fontFamily: "'Nexa Heavy', system-ui, sans-serif" }}>Receive Solana</h2>
                             <button
                                 onClick={() => setShowReceiveModal(false)}
                                 className="text-gray-400 hover:text-gray-300"
@@ -259,7 +261,7 @@ export default function Dashboard() {
 
                         <div className="text-center mb-6">
                             <p className="text-gray-400 mb-4" style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}>
-                                Scan the QR code or copy your address to receive ETH
+                                Scan the QR code or copy your address to receive SOL
                             </p>
                             
                             {/* QR Code */}
